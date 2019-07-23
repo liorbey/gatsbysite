@@ -38,19 +38,23 @@ const Input = styled.input`
   ${tw`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`};
 `
 
-const Form = () => (
-  <form name="Contact Form" action = '/' method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="Contact Form" />
-  <div>
-    <label>Your Email:</label>
-    <input type="email" name="email" />
-  </div>
-  <div>
-    <label>Message:</label>
-    <textarea name="message" />
-  </div>
-  <button type="submit">Send</button>
-</form>
+const Form = ({bg}) => (
+    <Div>
+  <Formheader name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" bg={bg}>
+    <Formdiv class="mb-4">
+      <Label for="username">
+        Sign up for a free introductory lesson
+      </Label>
+      <Input type="hidden" name="form-name" value="contact"/>
+      <Input id="username" type="text" placeholder="Enter your email"/>
+    </Formdiv>
+     <Buttondiv>
+      <Button type="submit">
+        Redeem your free lesson
+      </Button>
+    </Buttondiv>
+  </Formheader>
+</Div>
 
   )
 

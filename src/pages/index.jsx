@@ -84,7 +84,7 @@ const Index = () => (
           Learn to code, build a robot, <br/> become a math expert, <br/> create & 3D print
         </BigTitle>
         <Subtitle>Whatever path - our students learn future proof skills & have a ton of fun doing it</Subtitle>
-        <Form>
+        <Form bg="linear-gradient(to right, #8B9688 0%, #FBB03B 100%)">
     
         </Form>
       </Hero>
