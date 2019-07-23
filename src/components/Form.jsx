@@ -40,7 +40,7 @@ const Input = styled.input`
 
 const Form = ({bg}) => (
     <Div>
-  <Formheader name="contact" method="POST" data-netlify="true" bg={bg}>
+  <Formheader action = "/success" name="contact" method="POST" data-netlify="true" bg={bg}>
     <Formdiv class="mb-4">
       <Label for="username">
         Sign up for a free introductory lesson
