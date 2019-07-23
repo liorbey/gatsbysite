@@ -40,7 +40,7 @@ const Input = styled.input`
 
 const Form = ({bg}) => (
     <Div>
-  <Formheader bg={bg}>
+  <Formheader name="contact" method="POST" data-netlify="true" bg={bg}>
     <Formdiv class="mb-4">
       <Label for="username">
         Sign up for a free introductory lesson
@@ -48,7 +48,7 @@ const Form = ({bg}) => (
       <Input id="username" type="text" placeholder="Enter your email"/>
     </Formdiv>
      <Buttondiv>
-      <Button type="button">
+      <Button type="submit">
         Redeem your free lesson
       </Button>
     </Buttondiv>
