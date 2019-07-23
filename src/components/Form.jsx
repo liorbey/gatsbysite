@@ -41,11 +41,12 @@ const Input = styled.input`
 const Form = ({bg}) => (
     <Div>
   <Formheader name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" bg={bg}>
+  <Input type="hidden" name="form-name" value="contact"/>
     <Formdiv class="mb-4">
       <Label for="username">
         Sign up for a free introductory lesson
       </Label>
-      <Input type="hidden" name="form-name" value="contact"/>
+      <Input id="username" type="text" placeholder="Enter your email"/>
     </Formdiv>
      <Buttondiv>
       <Button type="submit">
