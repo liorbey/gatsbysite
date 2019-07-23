@@ -6,6 +6,8 @@ import { Parallax } from 'react-spring/renderprops-addons.cjs'
 // Components
 import Layout from '../components/Layout'
 import ProjectCard from '../components/ProjectCard'
+import Form from '../components/Form'
+import Header from '../components/Header'
 
 // Elements
 import Inner from '../elements/Inner'
@@ -18,11 +20,21 @@ import About from '../views/About'
 import Contact from '../views/Contact'
 
 import avatar from '../images/avatar.jpg'
+import customer1 from '../images/customer1.jpg'
+import customer2 from '../images/customer2.jpeg'
+import customer3 from '../images/customer3.jpg'
+
+import laptop from '../images/build.png'
+import carpic from '../images/carpic.png'
+import design from '../images/design.png'
+
+import logo from '../../static/logo.png'
+
 
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
   display: grid;
-  grid-gap: 4rem;
+  grid-gap: 12rem;
   grid-template-columns: repeat(2, 1fr);
   @media (max-width: 1200px) {
     grid-gap: 3rem;
@@ -36,7 +48,9 @@ const ProjectsWrapper = styled.div`
 const AboutHero = styled.div`
   ${tw`flex flex-col lg:flex-row items-center mt-8`};
 `
-
+const AboutHero2 = styled.div`
+  ${tw`flex flex-col lg:flex-row flex-wrap items-center mt-8 pt-12`};
+`
 const Avatar = styled.img`
   ${tw`rounded-full w-32 xl:w-48 shadow-lg h-auto`};
 `
@@ -44,9 +58,12 @@ const Avatar = styled.img`
 const AboutSub = styled.span`
   ${tw`text-white pt-12 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
 `
+const AboutSub2 = styled.span`
+  ${tw`text-white pt-12 lg:pt-0 lg:pl-12 text-md lg:text-md xl:text-xl`};
+`
 
 const AboutDesc = styled.p`
-  ${tw`text-grey-light text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12 text-justify`};
+  ${tw`flex flex-row lg:flex-row items-center mt-8`};
 `
 
 const ContactText = styled.p`
@@ -61,75 +78,95 @@ const Index = () => (
   <>
     <Layout />
     <Parallax pages={5}>
+    <img style ={{"margin-left":"80px", "marginTop": '50px'}}src = {logo}></img>
       <Hero offset={0}>
         <BigTitle>
-          Hello, <br /> I'm John Doe.
+          Learn to code, build a robot, <br/> become a math expert, <br/> create & 3D print
         </BigTitle>
-        <Subtitle>I'm creating noice web experiences for the next generation of consumer-facing companies.</Subtitle>
+        <Subtitle>Whatever path - our students learn future proof skills & have a ton of fun doing it</Subtitle>
+        <Form bg="linear-gradient(to right, #8B9688 0%, #FBB03B 100%)">
+    
+        </Form>
       </Hero>
       <Projects offset={1}>
-        <Title>Projects</Title>
+        <Title>Curriculum paths</Title>
         <ProjectsWrapper>
           <ProjectCard
-            title="Freiheit"
-            link="https://www.behance.net/gallery/58937147/Freiheit"
-            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
+            title="Coding"
+            link=""
+            bg="linear-gradient(to right, #61892F 0%, #86C232 100%)"
+            image = {laptop}
           >
-            This project is my entry to Adobe's #ChallengeYourPerspective contest.
+            Write programs that do your homework. Create games and websites. See code logically through algorithms
           </ProjectCard>
           <ProjectCard
-            title="Harry Potter"
-            link="https://www.behance.net/gallery/52915793/Harry-Potter"
-            bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
+            title="Robotics"
+            link=""
+            bg="linear-gradient(to right, #66FCF1 0%, #1F2833 100%)"
+            image = {carpic}
           >
-            I entered the DOCMA 2017 award with this Harry Potter inspired image.
+            Learn how to operate iOt devices like the Arduino. Develop a sharp knowledge of electronics. Engineer a self driving car
           </ProjectCard>
           <ProjectCard
-            title="Tomb Raider"
-            link="https://www.behance.net/gallery/43907099/Tomb-Raider"
-            bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
+            title="Design"
+            link=""
+            bg="linear-gradient(to right, #9A1750 0%, #FBE8A6 100%)"
+            image = {design}
           >
-            Recreation of a Tomb Raider Wallpaper (Fan Art)
+           Get an understanding of architecture & engineering using TinkerCAD. Design your own creations. Learn to operate and make your designs come to life with 3D printing
           </ProjectCard>
           <ProjectCard
-            title="Eagle"
-            link="https://www.behance.net/gallery/38068151/Eagle"
-            bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
+            title="Math enrichment"
+            link=""
+            bg="linear-gradient(to right, #88BDBC 0%, #4F4A41 100%)"
           >
-            A fantasy image manipulation relocating the habitat of wild animals.
+            Understand the logical prinicipals behind the math you already know. Challenge yourself to understand concepts 2-3 grades above your peers
           </ProjectCard>
         </ProjectsWrapper>
       </Projects>
       <About offset={3}>
-        <Title>About</Title>
+        <Title>Our vision</Title>
         <AboutHero>
           <Avatar src={avatar} alt="John Doe" />
           <AboutSub>
-            The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-            Emoji into my speech to better express myself. Winky face.
+          At BeyTech, we believe that modern tech is completely changing what and how today's kids should be learning. 
+            We pride ourselves for our ability to bring STEM to kids of all ages with future-proof skills, innovative curriculums, & personalized paths.<br/><br/>-Yaron, Lead Instructor
           </AboutSub>
         </AboutHero>
         <AboutDesc>
-          You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
-          every day. My mother cried the day I was born because she knew she’d never be prettier than me. You should
-          make me your campaign manager. I was born for politics. I have great hair and I love lying. Captain? The kids
-          want to know where Paulie the Pigeon is. I told them he got sucked up into an airplane engine, is that all
-          right?
+        <AboutHero2>
+          <Avatar src={customer1} alt="John Doe" />
+          <AboutSub2>
+          Lior is the best teacher my kids have ever had, they are learning a ton and also having lots of fun.
+          <br/><br/>-Sarah, Upper West (3 innovators)
+          </AboutSub2>
+        </AboutHero2>
+        <AboutHero2>
+          <Avatar src={customer2} alt="John Doe" />
+          <AboutSub2>
+            My daughter went from struggling with math to competing in math olympiads
+          <br/><br/>-Brent, Upper East (1 innovator)
+          </AboutSub2>
+        </AboutHero2>
+        <AboutHero2>
+          <Avatar src={customer3} alt="John Doe" />
+          <AboutSub2>
+          My two sons went from zero knowledge of coding to building super cool robotics projects.
+          <br/><br/>-Emily, Chelsea (2 innovators)
+          </AboutSub2>
+        </AboutHero2>
         </AboutDesc>
       </About>
       <Contact offset={4}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
-            Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or find me on other platforms:{' '}
-            <a href="https://dribbble.com/LekoArts">Dribbble</a> &{' '}
-            <a href="https://www.instagram.com/lekoarts.de/">Instagram</a>
+            Contact us by <a href="mailto:lior.bey95@gmail.com">Email</a> <br/>or even quicker, send us an instant message!{' '}
+            <a href="https://wa.me/17187375538">Whatsapp</a> {' '}
           </ContactText>
         </Inner>
         <Footer>
-          &copy; 2019 by Gatsby Starter Portfolio Cara.{' '}
-          <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">GitHub Repository</a>. Made by{' '}
-          <a href="https://www.lekoarts.de">LekoArts</a>.
+          &copy; 2019 BeyTech{' '}
         </Footer>
       </Contact>
     </Parallax>

@@ -22,11 +22,17 @@ const Title = styled.div`
   ${tw`text-white uppercase text-2xl md:text-3xl xl:text-4xl tracking-wide font-sans pt-8`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 `
+const Img = styled.img`
+  ${tw`absolute z-10 visible h-15 sm:invisible md:visible lg:visible w-auto`};
+  left: 230px;
+  top: 90px;
+`
 
-const ProjectCard = ({ title, link, children, bg }) => (
+const ProjectCard = ({ title, link, children, bg, image }) => (
   <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
     <Text>{children}</Text>
     <Title>{title}</Title>
+    <Img src={image}></Img>
   </Wrapper>
 )
 
@@ -37,4 +43,5 @@ ProjectCard.propTypes = {
   link: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   bg: PropTypes.string.isRequired,
+  image: PropTypes.element.isRequired,
 }
