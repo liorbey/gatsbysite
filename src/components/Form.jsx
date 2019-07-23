@@ -39,7 +39,7 @@ const Input = styled.input`
 `
 
 const Form = () => (
-  <form name="Contact Form" method="POST" data-netlify="true">
+  <form name="Contact Form" action = '/' method="POST" data-netlify="true">
   <input type="hidden" name="form-name" value="Contact Form" />
   <div>
     <label>Your Email:</label>
