@@ -1,80 +1,68 @@
-import React from "react";
-import { navigateTo } from "gatsby-link";
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
+const Div = styled.div`
+  ${tw`w-full max-w-xs`}
 
-export default class Form extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+`
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+const Formdiv = styled.div`
+  ${tw`mb-4`}
+
+`
+const Formheader = styled.form`
+  ${tw`shadow-md rounded px-8 pt-6 pb-8 mb-4`};
+  background: ${props => props.bg};
+`
+const Button = styled.button`
+${tw`cursor-pointer text-white backgroundColor:black`};
+  &:hover {
+    text-white font-bold py-2 px-4 rounded;
+  };
+  &:focus{
+      outline-none;
+      shadow-outline;
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const form = e.target;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state
-      })
-    })
-      .then(() => navigateTo(form.getAttribute("action")))
-      .catch(error => alert(error));
-  };
+`
+const Buttondiv = styled.div`
+${tw`flex items-center justify-between`};
 
-  render() {
-    return (
-      <div>
-        <h1>Contact</h1>
-        <form
-          name="contact"
-          method="post"
-          action="/"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={this.handleSubmit}
-        >
-          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden>
-            <label>
-              Don’t fill this out:{" "}
-              <input name="bot-field" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your name:<br />
-              <input type="text" name="name" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your email:<br />
-              <input type="email" name="email" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <label>
-              Message:<br />
-              <textarea name="message" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
-        </form>
-      </div>
-    );
-  }
+`
+const Label = styled.label`
+  ${tw`block text-gray-700 text-sm font-bold mb-2`};
+`
+const Input = styled.input`
+  ${tw`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`};
+`
+
+const Form = ({bg}) => (
+    <Div>
+  <Formheader name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" bg={bg}>
+    <Formdiv class="mb-4">
+      <Label for="username">
+        Sign up for a free introductory lesson
+      </Label>
+      <Input type="hidden" name="form-name" value="contact"/>
+      <Input id="username" type="text" placeholder="Enter your email"/>
+    </Formdiv>
+     <Buttondiv>
+      <Button type="submit">
+        Redeem your free lesson
+      </Button>
+    </Buttondiv>
+  </Formheader>
+</Div>
+
+  )
+
+export default Form
+
+Form.propTypes = {
+  title: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  bg: PropTypes.string.isRequired,
 }
