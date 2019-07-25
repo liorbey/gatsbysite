@@ -88,7 +88,7 @@ const Index = () => (
         </Form>
         <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />
-          <input type="email" name="email" placeholder="Your email"/>
+          <input type="text" name="name" placeholder="Your email"/>
           <button type="submit">signup</button>
         </form>
       </Hero>
