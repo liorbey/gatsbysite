@@ -39,13 +39,13 @@ const Input = styled.input`
 `
 
 const Form = ({bg}) => (
-    <Div>
-  <Formheader action="https://formspree.io/lior.bey95@gmail.com" method="POST" bg={bg}>
+  <Formheader name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" bg={bg}>
     <Formdiv class="mb-4">
       <Label for="username">
         Sign up for a free introductory lesson
       </Label>
-      <Input type="email" name="email" placeholder="Your email"/>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="email" name="email" placeholder="Your email"/>
     </Formdiv>
      <Buttondiv>
       <Button type="submit">
@@ -53,8 +53,6 @@ const Form = ({bg}) => (
       </Button>
     </Buttondiv>
   </Formheader>
-</Div>
-
   )
 
 export default Form
