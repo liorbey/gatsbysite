@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "gatsby"
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { Parallax } from 'react-spring/renderprops-addons.cjs'
@@ -6,7 +7,7 @@ import { Parallax } from 'react-spring/renderprops-addons.cjs'
 // Components
 import Layout from '../components/Layout'
 import ProjectCard from '../components/ProjectCard'
-import Form from '../components/Form'
+import Slider from '../components/slider'
 import Header from '../components/Header'
 
 // Elements
@@ -83,14 +84,9 @@ const Index = () => (
         <BigTitle>
           Learn to code, build a robot, <br/> become a math expert, <br/> create & 3D print
         </BigTitle>
-        <Subtitle>Whatever path - our students learn future proof skills & have a ton of fun doing it</Subtitle>
-        <Form bg="linear-gradient(to right, #8B9688 0%, #FBB03B 100%)">  
-        </Form>
-        <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="text" name="name" placeholder="Your email"/>
-          <button type="submit">signup</button>
-        </form>
+        <Subtitle>Whatever path - our students learn future proof skills & have a ton of fun doing it!</Subtitle>
+        <br></br>
+        <Slider>NYC offer</Slider>
       </Hero>
       <Projects offset={1}>
         <Title>Curriculum paths</Title>
@@ -161,15 +157,16 @@ const Index = () => (
         </AboutHero2>
         </AboutDesc>
       </About>
+      
       <Contact offset={4}>
         <Inner>
-          <Title>Get in touch</Title>
+          <Title id="contact">Get in touch</Title>
           <ContactText>
             Contact us by <a href="mailto:lior.bey95@gmail.com">Email</a> <br/>or even quicker, send us an instant message!{' '}
             <a href="https://wa.me/17187375538">Whatsapp</a> {' '}
           </ContactText>
         </Inner>
-        <Footer>
+        <Footer >
           &copy; 2019 BeyTech{' '}
         </Footer>
       </Contact>
