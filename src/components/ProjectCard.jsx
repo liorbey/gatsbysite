@@ -23,7 +23,7 @@ const Title = styled.div`
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 `
 const Img = styled.img`
-  ${tw`absolute z-10 visible h-15 sm:invisible md:visible lg:visible w-auto`};
+  ${tw`absolute z-10 visible h-15 sm:invisible md:invisible lg:visible w-auto`};
   left: 230px;
   top: 90px;
 `

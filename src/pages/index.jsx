@@ -87,6 +87,7 @@ const Index = () => (
         <Subtitle>Whatever path - our students learn future proof skills & have a ton of fun doing it!</Subtitle>
         <br></br>
         <Slider>NYC offer</Slider>
+        <div><h1>hello</h1></div>
       </Hero>
       <Projects offset={1}>
         <Title>Curriculum paths</Title>
@@ -134,27 +135,6 @@ const Index = () => (
           </AboutSub>
         </AboutHero>
         <AboutDesc>
-        <AboutHero2>
-          <Avatar src={customer1} alt="John Doe" />
-          <AboutSub2>
-          Lior is the best teacher my kids have ever had, they are learning a ton and also having lots of fun.
-          <br/><br/>-Sarah, Upper West (3 innovators)
-          </AboutSub2>
-        </AboutHero2>
-        <AboutHero2>
-          <Avatar src={customer2} alt="John Doe" />
-          <AboutSub2>
-            My daughter went from struggling with math to competing in math olympiads
-          <br/><br/>-Brent, Upper East (1 innovator)
-          </AboutSub2>
-        </AboutHero2>
-        <AboutHero2>
-          <Avatar src={customer3} alt="John Doe" />
-          <AboutSub2>
-          My two sons went from zero knowledge of coding to building super cool robotics projects.
-          <br/><br/>-Emily, Chelsea (2 innovators)
-          </AboutSub2>
-        </AboutHero2>
         </AboutDesc>
       </About>
       
