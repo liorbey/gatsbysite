@@ -87,7 +87,7 @@ const Index = () => (
         <Subtitle>Whatever path - our students learn future proof skills & have a ton of fun doing it!</Subtitle>
         <br></br>
         <Slider>NYC offer</Slider>
-        <div><h1>hello</h1></div>
+        
       </Hero>
       <Projects offset={1}>
         <Title>Curriculum paths</Title>
